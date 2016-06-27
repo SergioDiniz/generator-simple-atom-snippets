@@ -1,0 +1,27 @@
+<div class="container col-md-6 col-md-offset-3 ">
+
+  <h1 class="text-xs-center">Simple Snippets Generator</h1>
+
+  <%= form_tag snippets_path, method: :post, class: 'form-g-snippets' do %>
+    <fieldset class="form-group">
+      <label>Words</label>
+      <%= text_area_tag 'body', @post, rows: 9, class: 'form-control', placeholder: 'asset_path, asset_url, audio_path, audio_url' %>
+    </fieldset>
+    <%= submit_tag 'Generate', class: 'btn btn-primary-outline' %>
+  <% end %>
+
+  <br>
+  <fieldset class="form-group" >
+    result:
+    <hr>
+    <% @snippets.each do |spt| %>
+      '<%= spt %>': <br>
+      &nbsp;&nbsp;'prefix': '<%= spt %>' <br>
+      &nbsp;&nbsp;'body': '<%= spt %>' <br>
+      <br>
+    <% end %>
+  </fieldset>
+
+  
+
+</div>
