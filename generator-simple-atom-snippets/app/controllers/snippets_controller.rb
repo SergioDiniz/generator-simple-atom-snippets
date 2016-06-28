@@ -1,5 +1,6 @@
 class SnippetsController < ApplicationController
   def index
+    @snippets = []
   end
 
   def create
@@ -12,4 +13,6 @@ class SnippetsController < ApplicationController
   def post_params
     params.require(:body)
   end
+
+  
 end
